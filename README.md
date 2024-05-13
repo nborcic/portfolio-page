@@ -1,1 +1,1 @@
-Simple HTML made portfolio site.
+Simple HTML, CSS made portfolio site.
