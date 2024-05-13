@@ -111,6 +111,7 @@ body {
   flex-wrap: wrap;
   color: #ffffff;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .description {
@@ -157,6 +158,8 @@ body {
   color: #000000;
   padding: 20px;
   height: 50px;
+  
+ 
 }
 .techUsedInWork {
   display: flex;
@@ -211,3 +214,4 @@ body {
   gap: 10px;
   height: 30px;
 }
+

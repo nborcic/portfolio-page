@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const aboutLink = document.querySelector('a[href="#about"]');
-    const aboutSection = document.querySelector('#about');
+    const aboutLink = document.querySelector('a[href="#projects"]');
+    const aboutSection = document.querySelector('#projects');
 
     aboutLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default anchor link behavior
@@ -8,3 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
         aboutSection.focus(); // Focus on the About section
     });
 });
+
+const navbar = document.querySelector('.navbar');
+const navbarButton = document.querySelector('.navbar-button');
+const homeSection = document.querySelector('#home');
+
+if (!navbar.style.display || navbar.style.display === 'none') {
+    navbarButton.style.display = 'block';
+    homeSection.style.backgroundColor = 'lightblue';
+}
