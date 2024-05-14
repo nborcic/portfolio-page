@@ -1,13 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const aboutLink = document.querySelector('a[href="#projects"]');
     const aboutSection = document.getElementById('sectionProjects');
-
-
+    const aboutMail = document.querySelector('a[href="#email"]');
+    const emailSection = document.getElementById('email');
 
     aboutLink.addEventListener('click', function (event) {
         event.preventDefault();
         aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
         aboutSection.focus();
+    });
+    aboutMail.addEventListener('click', function (event) {
+        event.preventDefault();
+        emailSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        emailSection.focus();
+        window.setTimeout(() => { window.scrollTo(5000, 5000) }, 5000);
     });
 });
 
@@ -39,6 +45,7 @@ const homeSection = document.querySelector('#home');
 window.addEventListener('scroll', function () {
     if (window.scrollY > 0) {
         navbar.children[1].style.display = 'none';
+        navbar.children[2].style.display = 'none';
         navbar.style.position = "fixed";
         navbar.style.top = "0";
         navbar.style.width = "100%";
@@ -48,6 +55,7 @@ window.addEventListener('scroll', function () {
     }
     else {
         navbar.children[1].style.display = 'block';
+        navbar.children[2].style.display = 'block';
     }
 
 
