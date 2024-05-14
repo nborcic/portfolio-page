@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     homeLink.addEventListener('click', function (event) {
         event.preventDefault();
-        homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        homeSection.scrollIntoView({ behavior: "smooth", block: "end" });
         homeSection.focus();
     });
 });
@@ -44,4 +44,20 @@ window.addEventListener('scroll', function () {
     }
 
 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const paragraphs = document.querySelectorAll('.copy');
+
+    paragraphs.forEach(paragraph => {
+        paragraph.addEventListener('click', function () {
+            const textToCopy = "nickborcic1@ymail.com; nickborcic69@gmail.com";
+            navigator.clipboard.writeText(textToCopy).then(function () {
+                console.log(textToCopy + '  copied to clipboard');
+
+            }).catch(function (error) {
+                console.error('Could not copy text: ', error);
+            });
+        });
+    });
 });
