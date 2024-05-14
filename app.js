@@ -1,19 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
     const aboutLink = document.querySelector('a[href="#projects"]');
-    const aboutSection = document.querySelector('#projects');
+    const aboutSection = document.getElementById('#sectionProjects');
+    const navbar = document.querySelector('.navbar');
+    const homeButton = navbar.children[0];
 
     aboutLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default anchor link behavior
-        aboutSection.scrollIntoView({ behavior: "smooth", block: "start" }); // Smooth scroll to the About section
-        aboutSection.focus(); // Focus on the About section
+        event.preventDefault();
+        aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        aboutSection.focus();
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const homeLink = document.querySelector('a[href="#home"]');
+    const homeSection = document.getElementById('home');
+
+    homeLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        homeSection.focus();
+    });
+});
+
+
 
 const navbar = document.querySelector('.navbar');
 const navbarButton = document.querySelector('.navbar-button');
 const homeSection = document.querySelector('#home');
 
-if (!navbar.style.display || navbar.style.display === 'none') {
-    navbarButton.style.display = 'block';
-    homeSection.style.backgroundColor = 'lightblue';
-}
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+        navbar.children[1].style.display = 'none';
+        navbar.style.position = "fixed";
+        navbar.style.top = "0";
+        navbar.style.width = "100%";
+        navbar.children[0].style.fontWeight = "bold";
+
+
+    }
+    else {
+        navbar.children[1].style.display = 'block';
+    }
+
+
+});
