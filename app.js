@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const aboutLink = document.querySelector('a[href="#projects"]');
-    const aboutSection = document.getElementById('#sectionProjects');
-    const navbar = document.querySelector('.navbar');
-    const homeButton = navbar.children[0];
+    const aboutSection = document.getElementById('sectionProjects');
+
+
 
     aboutLink.addEventListener('click', function (event) {
         event.preventDefault();
@@ -13,14 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const homeLink = document.querySelector('a[href="#home"]');
     const homeSection = document.getElementById('home');
 
-    homeLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        homeSection.scrollIntoView({ behavior: "smooth", block: "end" });
-        homeSection.focus();
-    });
+    if (homeLink && homeSection) {
+
+        homeLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            homeSection.focus({ preventScroll: true });
+            window.setTimeout(() => { window.scrollTo(0, 0) }, 50);//tnx sadko from stackoverflow
+        });
+    } else {
+        console.error('homeLink or homeSection is null');
+    }
 });
 
 
@@ -53,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         paragraph.addEventListener('click', function () {
             const textToCopy = "nickborcic1@ymail.com; nickborcic69@gmail.com";
             navigator.clipboard.writeText(textToCopy).then(function () {
-                console.log(textToCopy + '  copied to clipboard');
+                console.log(textToCopy + ' copied to clipboard');
 
             }).catch(function (error) {
                 console.error('Could not copy text: ', error);
